@@ -19,7 +19,7 @@ if(command === "info") {
       .setThumbnail(message.client.avatarURL)
       .addField("Hello my name is CupzBot.", true)
       .addField("https://twitch.tv/lil_cupz", true)
-      .addField("Follow me on twitch!" true)
+      .addField("Follow me on twitch!", true)
       .setColor(0x00FFFF)
     message.channel.sendEmbed(embed);
   }
