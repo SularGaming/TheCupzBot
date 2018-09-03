@@ -24,6 +24,10 @@ if(command === "info") {
       .setColor(0x00FFFF)
     message.channel.sendEmbed(embed);
   }
+  
+if(command === "help") {
+  message.channel.sendMessage("```Here is a list of commands```");
+}
 
 //  /n == New line
 //  you can even do message.channel.sendMessage("```Hello```");
