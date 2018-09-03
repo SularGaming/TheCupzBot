@@ -4,7 +4,7 @@ const config = require("./config.json");
 
 var reeses = [
   "https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fpeopledotcom.files.wordpress.com%2F2017%2F03%2Freeses-2.jpg%3Fw%3D2000&w=700&q=85"
-]
+];
 
 client.on('ready', () => {
   client.user.setGame('Follow me on Twitch! | cupz! = Prefix! IN MAINTENANCE MODE!', "https://twitch.tv/lil_cupz");
