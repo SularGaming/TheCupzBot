@@ -17,8 +17,8 @@ const command = args.shift().toLowerCase();
 if(command === "info") {
     var embed = new Discord.RichEmbed()
       .setThumbnail(message.client.avatarURL)
-      .addField("Hello my name is CupzBot.", true)
-      .addField("I am developed to help those who cannot help themselves.", true)
+      .addField("Follow me on twitch!", true)
+      .addField("https://twitch.tv/lilcupz",)
       .addField("Do cupz!help for more commands.")
       .addField("Thanks for inviting me and enjoy.")
       .setColor(0x00FFFF)
