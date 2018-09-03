@@ -17,10 +17,10 @@ const command = args.shift().toLowerCase();
 if(command === "info") {
     var embed = new Discord.RichEmbed()
       .setThumbnail(message.client.avatarURL)
-      .addField("Hello my name is CupzBot.", true)
-      .addField("I am developed to help those who cannot help themselves.", true)
-      .addField("Do cupz!help for more commands.")
-      .addField("Thanks for inviting me and enjoy.")
+      .addField("Hello my name is CupzBot.", "Just call me Cupz", true)
+      .addField("I am developed to help those who cannot help themselves.", "This is true", true)
+      .addField("Do cupz!help for more commands." "Commands are in the process of being made.")
+      .addField("Thanks for inviting me and enjoy." "https://twitch.tv/lilcupz")
       .setColor(0x00FFFF)
     message.channel.sendEmbed(embed);
   }
