@@ -2,6 +2,8 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const config = require("./config.json");
 
+const VTDL = require("ytdl-core");
+
 var reeses = [
   "https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fpeopledotcom.files.wordpress.com%2F2017%2F03%2Freeses-2.jpg%3Fw%3D2000&w=700&q=85",
   "http://965kvki.com/files/2017/09/Reeses-Peanut-Butter-Cup.jpg?w=980&q=75",
@@ -26,6 +28,22 @@ var reeses = [
   "http://www.stickpng.com/assets/images/580b57fbd9996e24bc43c0c4.png"
 ];
 
+function play(connection, message) {
+  var server = servers[message.guild.id];
+
+  server.dispatcher = connection.playStream(YTDL(server.queue[0]. {filter: "audioonly"}));
+
+  server.queue.shift();
+
+  server.dispatcher.on("end", function() {
+    if (server.queue[0]) play(connection, message);
+    else connection.disconnect();
+  });
+}
+
+
+var servers = {};
+
 client.on('ready', () => {
   client.user.setGame('Follow me on Twitch! | cupz! = Prefix! IN MAINTENANCE MODE!', "https://twitch.tv/lil_cupz");
   console.log('Hello');
@@ -34,7 +52,7 @@ client.on('ready', () => {
 client.on("message", async message => {
   if(message.author.bot) return;
   if(message.content.indexOf(config.prefix) !== 0) return;
-  
+});
 const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
 const command = args.shift().toLowerCase();
 
@@ -51,11 +69,54 @@ if(command === "info") {
 if(command === "reeses") {
   message.channel.sendMessage(reeses[Math.floor(Math.random() * reeses.length)]);
 }
-  
+
+bot.on("message", fuction.(message) {
+    if (message.author.equals(bot.user)) return;
+
+    if (!message.content.startsWith(PREFIX)) return;
+
+    var args = message.content.substring(PREFIX.length).split(" ");
+
+  switch (args[0].toLowerCase()) {
+    case "play":
+      if(!args[1]) {
+          message.Channel.sendMessage("Please provide a link.")
+          return;
+    }
+
+    if(!message.member.voiceChannel){
+      message.Channel.sendMessage("You must be in a voice channel to do that!")
+      return;
+    }
+
+    if(!servers[message.guild.id]) servers[message.guild.id] = {
+      queue[]
+    }
+
+    var server = servers[message.guild.id];
+
+    server.queue.push(args[1]);
+
+    if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
+      play(connection, message);
+    });
+    break;
+  case "skip":
+    var server = servers[message.guild.id];
+
+    if (server.dispatcher) server.dispatcher.end();
+    break;
+  case "stop":
+    var server = servers[message.guild.id];
+
+    if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
+    break;
+  default:
+      message.channel.sendMessage("Invalid command.");
+    }
+});
 //  /n == New line
 //  you can even do message.channel.sendMessage("```Hello```");
-
-});
 
 setInterval(() => {
   http.get('http://discordjs-heroku.herokuapp.com');
