@@ -3,7 +3,9 @@ const client = new Discord.Client();
 const config = require("./config.json");
 
 var reeses = [
-  "https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fpeopledotcom.files.wordpress.com%2F2017%2F03%2Freeses-2.jpg%3Fw%3D2000&w=700&q=85"
+  "https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fpeopledotcom.files.wordpress.com%2F2017%2F03%2Freeses-2.jpg%3Fw%3D2000&w=700&q=85",
+  "http://965kvki.com/files/2017/09/Reeses-Peanut-Butter-Cup.jpg?w=980&q=75",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB0Sz8Czbc0WKgmsCn5LGSVsXpnPwBKxm5zlcLuird1dDqP4Ur"
 ];
 
 client.on('ready', () => {
