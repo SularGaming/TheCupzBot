@@ -18,7 +18,7 @@ if(command === "info") {
     var embed = new Discord.RichEmbed()
       .setThumbnail(message.client.avatarURL)
       .addField("Follow me on twitch!", true)
-      .addField("https://twitch.tv/lilcupz",)
+      .addField("https://twitch.tv/lilcupz")
       .addField("Do cupz!help for more commands.")
       .addField("Thanks for inviting me and enjoy.")
       .setColor(0x00FFFF)
@@ -26,7 +26,11 @@ if(command === "info") {
   }
   
 if(command === "help") {
-  message.channel.sendMessage("```Here is a list of commands```");
+  var embed - new Discord.RichEmbed()
+    .addField("Here is a list of commands!", true)
+    .addField("cupz!info")
+    .setColor(0x00FFFF)
+  message.channel.sendEmbed(embed);
 }
 
 //  /n == New line
