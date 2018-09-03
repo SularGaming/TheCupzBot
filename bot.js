@@ -19,7 +19,7 @@ if(command === "info") {
       .setThumbnail(message.client.avatarURL)
       .addField("Hello my name is CupzBot.", true)
       .addField("I am developed to help those who cannot help themselves.", true)
-      .addField("Do t!help for more commands.")
+      .addField("Do cupz!help for more commands.")
       .addField("Thanks for inviting me and enjoy.")
       .setColor(0x00FFFF)
     message.channel.sendEmbed(embed);
