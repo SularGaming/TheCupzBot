@@ -18,11 +18,13 @@ if(command === "info") {
     var embed = new Discord.RichEmbed()
       .setThumbnail(message.client.avatarURL)
       .addField("Hello my name is CupzBot.", true)
-      .addField("https://twitch.tv/lil_cupz",)
+      .addField("https://twitch.tv/lil_cupz", true)
+      .addField("Follow me on twitch!" true)
       .setColor(0x00FFFF)
     message.channel.sendEmbed(embed);
   }
 
+  
 //  /n == New line
 //  you can even do message.channel.sendMessage("```Hello```");
 
